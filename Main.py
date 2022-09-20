@@ -10,12 +10,28 @@ def Hashing(keyvalue) -> int:
 
 def insert(Hashtable, keyvalue, value) -> None:
 	# Write your code here
-	h=keyvalue%len(Hashtable)
-	while Hashtable[h]!=None:
-		if Hashtable[h]==None:
-			++h
-			h%=len(Hashtable)
-		Hashtable[h]=value
+	h = keyvalue % len(Hashtable)
+          
+        # Get the bucket corresponding to index
+        bucket = Hashtable[h]
+  
+        f = False
+        for index, record in enumerate(bucket):
+            record_key, record_val = record
+              
+            # check if the bucket has same key as
+            # the key to be inserted
+            if record_key == key:
+                f = True
+                break
+  
+        # If the bucket has same key as the key to be inserted,
+        # Update the key value
+        # Otherwise append the new key-value pair to the bucket
+        if f:
+            bucket[index] = (key, val)
+        else:
+            bucket.append((key, val))
 
 		
 # Do not edit the following code
