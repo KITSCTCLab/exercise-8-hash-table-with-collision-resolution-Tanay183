@@ -12,10 +12,12 @@ def insert(Hashtable, keyvalue, value) -> None:
 	# Write your code here
 	h=Hashing(keyvalue)
 	while(Hashtable[h]!=None):
-		if Hashtable[h]!=-1:
+		if Hashtable[h]!==None:
+			Hashtable[h]=value
+		else:
 			++h
-			h%=hash_table_size
-		Hashtable[h]=value
+			h%=len(Hashtable)
+		
                   
 		
 # Do not edit the following code
