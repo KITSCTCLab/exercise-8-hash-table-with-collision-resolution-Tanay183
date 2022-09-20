@@ -12,7 +12,7 @@ def insert(Hashtable, keyvalue, value) -> None:
 	# Write your code here
 	h=Hashing(keyvalue)
 	while(Hashtable[h]!=None):
-		if Hashtable[h]!==None:
+		if Hashtable[h]==None:
 			Hashtable[h]=value
 		else:
 			++h
