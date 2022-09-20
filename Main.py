@@ -13,12 +13,9 @@ def insert(Hashtable, keyvalue, value) -> None:
 	h=keyvalue%len(Hashtable)
 	if Hashtable[h]==NULL:
 		Hashtable[h]=value
-		break
 	else:
 		insert(Hashtable,h+1,value)
 	
-
-
 # Do not edit the following code
 hash_table_size = int(input())
 # Create Hashtable as a list of list.
