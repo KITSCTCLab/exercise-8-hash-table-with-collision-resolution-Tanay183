@@ -11,11 +11,13 @@ def Hashing(keyvalue) -> int:
 def insert(Hashtable, keyvalue, value) -> None:
 	# Write your code here
 	h=keyvalue%len(Hashtable)
-	if Hashtable[h]==None:
+	while Hashtable[h]!=None:
+		if Hashtable[h]==None:
+			++h
+			h%=len(Hashtable)
 		Hashtable[h]=value
-	else:
-		insert(Hashtable,h+1,value)
-	
+
+		
 # Do not edit the following code
 hash_table_size = int(input())
 # Create Hashtable as a list of list.
