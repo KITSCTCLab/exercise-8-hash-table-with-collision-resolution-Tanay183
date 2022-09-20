@@ -11,7 +11,7 @@ def Hashing(keyvalue) -> int:
 def insert(Hashtable, keyvalue, value) -> None:
 	# Write your code here
 	h=keyvalue%len(Hashtable)
-	if Hashtable[h]==NULL:
+	if Hashtable[h]==None:
 		Hashtable[h]=value
 	else:
 		insert(Hashtable,h+1,value)
